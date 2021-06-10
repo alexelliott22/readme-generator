@@ -3,6 +3,7 @@ const { rejects } = require('assert');
 const fs = require('fs');
 const inquirer = require('inquirer');
 const { resolve } = require('path');
+const { writeFile } = require('../../projects/portfolio-generator/utils/generate-site');
 const generateMarkdown = require('./utils/generateMarkdown');
 // TODO: Create an array of questions for user input
 const questions = [
@@ -33,16 +34,16 @@ const questions = [
         choices: ['MIT', 'APACHE 2.0', 'GPL 2.0', 'BSD 2.0', 'None']
     },
     {
-        type: 'list',
+        type: 'input',
         name: 'dependencies',
         message: 'What command should be run to install dependencies?',
-        choices: ['npm install inquire']
+        default: 'npm install inquire'
     },
     {
-        type: 'list',
+        type: 'input',
         name: 'tests',
         message: 'What command should be run to run tests?',
-        choices: ['npm test']
+        default: 'npm test'
     },
     {
         type: 'input',
@@ -56,20 +57,30 @@ const questions = [
     }
 ];
 
-inquirer
-.prompt(questions)
-.then(data => console.log(data))
-
 // TODO: Create a function to write README file
-function writeToFile(fileName, data) {
-    return new Promise((resolve, reject) => {
+function writeToFile(markdown) {
+    return new Promise ((resolve, reject) => {
+        fs.writeFile('./README-generated.md', markdown, err => {
+            if(err) {
+                reject(err);
+                return;
+            }
+            resolve({
+                ok:true,
+                message:'File Created'
+            });
+        })
+    }) 
         
-    })
 }
 
 // TODO: Create a function to initialize app
 function init() {
-    
+    inquirer
+        .prompt(questions)
+        .then(data => generateMarkdown(data))
+        .then((markdown) => writeToFile(markdown))
+        .catch(err => console.log(err))
 }
 
 // Function call to initialize app
