@@ -35,11 +35,14 @@ return `
 
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
+  
+  const {username, email, title, description, license, dependencies, tests, usage, contributing} = data;
+
   return `
-  # ${data.title}
+  # ${title}
 
   ## Description
-  ${data.description}
+  ${description}
 
   ## Table of Contents
 
@@ -52,27 +55,27 @@ function generateMarkdown(data) {
   ## Installation
 
   To install the necessary dependenciesrun the following command:
-  ${data.dependencies}
+  ${dependencies}
 
   ## Usage
 
-  ${data.usage}
+  ${usage}
 
-  ${renderLicenseSection(data.license)}
+  ${renderLicenseSection(license)}
 
   ## Tests
 
   To run tests, run the following command:
   
-  ${data.tests}
+  ${tests}
 
   ## Contributing
 
-  ${data.contributing}
+  ${contributing}
 
 
   ## Questions 
-  If you ahve any questions about the repo, open an issue, or contact me directly at <${data.email}>. You can find more of my work at <https://github.com/${data.username}>.
+  If you ahve any questions about the repo, open an issue, or contact me directly at <${email}>. You can find more of my work at <https://github.com/${username}>.
 `;
 }
 
