@@ -9,7 +9,7 @@
   * [Installation](#installation)
   * [Usage](#usage)
   * [Tests](#tests)
-  * [Contributing](#contributing)
+  * [Screenshots](#screenshots)
 
   ## Installation
 
@@ -28,9 +28,9 @@
   
   npm test
 
-  ## Contributing
+  ## ScreenShots
 
-  Contribute whatever you like!
+  
 
 
   ## Questions 
