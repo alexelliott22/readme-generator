@@ -23,13 +23,13 @@ function renderLicenseSection(license) {
     return '';
   }
   else {
-    return `
-      ## License 
-      
-      ${renderLicenseBadgeAndLink(license)}
-      
-      This project is licensed under ${license} license.
-    `;
+return `
+  ## License 
+  
+  ${renderLicenseBadgeAndLink(license)}
+  
+  This project is licensed under the ${license} license.
+`;
   }
 }
 
@@ -38,18 +38,16 @@ function generateMarkdown(data) {
   return `
   # ${data.title}
 
-  <${renderLicenseLink(data.license)}>
-
   ## Description
   ${data.description}
 
   ## Table of Contents
 
   * [Installation](#installation)
-  * [Usage](#Usage)
-  * [License](#License)
-  * [Tests](#Tests)
-  * [Contributing](#Contributing)
+  * [Usage](#usage)
+  * [License](#license)
+  * [Tests](#tests)
+  * [Contributing](#contributing)
 
   ## Installation
 
