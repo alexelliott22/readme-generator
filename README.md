@@ -12,7 +12,6 @@
   * [Installation](#installation)
   * [Usage](#usage)
   * [Tests](#tests)
-  * [Screenshots](#screenshots)
 
   ## Installation
 
