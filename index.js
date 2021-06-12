@@ -44,7 +44,7 @@ const questions = [
                 return true;
             }
             else{
-                console.log('Please enter a ptoject name.')
+                console.log('Please enter a project name.')
                 return false;
             }
         }

@@ -62,7 +62,7 @@ function generateMarkdown(data) {
 
   ## Installation
 
-  To install the necessary dependenciesrun the following command:
+  To install the necessary dependencies run the following command:
   ${dependencies}
 
   ## Usage
